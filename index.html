@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>DuraMax Toughened Glass</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,73 +14,106 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-background:#0f172a;
+background:linear-gradient(-45deg,#0f172a,#1e3a8a,#2563eb,#0ea5e9);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
 color:white;
 overflow-x:hidden;
 }
 
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-background:linear-gradient(135deg,#0f172a,#1e293b);
+background:rgba(0,0,0,.15);
+position:relative;
+overflow:hidden;
 }
 
 .logo{
-width:120px;
-height:120px;
+width:130px;
+height:130px;
 border-radius:50%;
 background:linear-gradient(45deg,#00d4ff,#007bff);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:40px;
+font-size:42px;
 font-weight:bold;
 margin-bottom:20px;
 animation:float 3s ease-in-out infinite;
-box-shadow:0 0 30px rgba(0,212,255,.5);
+box-shadow:0 0 60px rgba(0,212,255,1);
 }
 
 h1{
-font-size:40px;
+font-size:42px;
 margin-bottom:10px;
+text-shadow:0 0 15px rgba(255,255,255,.3);
 }
 
 .tagline{
-color:#94a3b8;
-margin-bottom:20px;
+color:#e2e8f0;
+margin-bottom:25px;
+font-size:18px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 35px;
+padding:15px 35px;
 background:linear-gradient(45deg,#00d4ff,#007bff);
 color:white;
 text-decoration:none;
 border-radius:30px;
 font-weight:bold;
+margin-top:20px;
 transition:.3s;
+box-shadow:0 0 25px rgba(0,212,255,.6);
 }
 
 .btn:hover{
-transform:scale(1.05);
+transform:scale(1.08);
+box-shadow:0 0 40px rgba(0,212,255,1);
+}
+
+.hero img{
+width:90%;
+max-width:800px;
+margin-top:30px;
+border-radius:20px;
+box-shadow:0 0 35px rgba(0,212,255,.5);
+animation:float 4s ease-in-out infinite;
 }
 
 .section{
-padding:70px 20px;
-max-width:1000px;
+padding:80px 20px;
+max-width:1100px;
 margin:auto;
 }
 
 .section h2{
 text-align:center;
 margin-bottom:30px;
-font-size:32px;
+font-size:34px;
+}
+
+.section p{
+text-align:center;
+line-height:1.8;
 }
 
 .cards{
@@ -90,19 +123,32 @@ gap:20px;
 }
 
 .card{
-background:#1e293b;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
 padding:25px;
 border-radius:20px;
-transition:.3s;
+transition:.4s;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 30px rgba(0,212,255,.3);
+transform:translateY(-12px) scale(1.04);
+box-shadow:0 0 50px rgba(0,255,255,.8);
 }
 
 .contact{
 text-align:center;
+}
+
+.contact p{
+margin:12px 0;
+font-size:18px;
+}
+
+.contact a{
+color:#7dd3fc;
+text-decoration:none;
 }
 
 footer{
@@ -112,17 +158,37 @@ background:#020617;
 margin-top:50px;
 }
 
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+.glow{
+position:fixed;
+width:250px;
+height:250px;
+background:rgba(0,255,255,.25);
+filter:blur(100px);
+border-radius:50%;
+top:10%;
+left:10%;
+z-index:-1;
 }
-</style>
 
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+</style>
 </head>
+
 <body>
 
+<div class="glow"></div>
+
 <section class="hero">
-<div class="logo">DG</div>
+
+<div class="logo">🚘 DG</div>
 
 <h1>DuraMax Toughened Glass</h1>
 
@@ -133,19 +199,25 @@ Premium Toughened & Architectural Glass Solutions
 <a href="#products" class="btn">
 Explore Products
 </a>
+
+<img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?w=1200">
+
 </section>
 
 <section class="section">
+
 <h2>About Us</h2>
 
-<p style="text-align:center;line-height:1.8;">
+<p>
 DuraMax Toughened Glass Pvt Ltd specializes in high-quality
 toughened, laminated and decorative glass solutions for
 residential, commercial and automotive applications.
 </p>
+
 </section>
 
 <section class="section" id="products">
+
 <h2>Our Products</h2>
 
 <div class="cards">
@@ -171,13 +243,27 @@ residential, commercial and automotive applications.
 </div>
 
 </div>
+
 </section>
 
 <section class="section contact">
+
 <h2>Contact Us</h2>
 
-<p>📞 +91 8821882222</p>
-<p>✉️ harshagarwal@duramaxglass.com</p>
+<p>
+📞
+<a href="tel:+918821882222">
++91 8821882222
+</a>
+</p>
+
+<p>
+✉️
+<a href="mailto:harshagarwal@duramaxglass.com">
+harshagarwal@duramaxglass.com
+</a>
+</p>
+
 </section>
 
 <footer>
